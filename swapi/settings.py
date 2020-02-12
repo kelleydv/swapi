@@ -63,7 +63,7 @@ USE_L10N = True
 USE_TZ = True
 
 if not DEBUG:
-    DATABASES['default'] =  dj_database_url.config()
+    DATABASES['default'] =  dj_database_url.parse(os.environ['DATABASE_URL'])
 
     DATABASES['default']['ENGINE'] = 'django_postgrespool'
 
